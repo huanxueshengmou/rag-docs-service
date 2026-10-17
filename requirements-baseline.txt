@@ -1,0 +1,5 @@
+-r requirements.txt
+
+# langchain_baseline.py 的对照实现依赖
+chromadb>=0.5
+sentence-transformers>=3.0

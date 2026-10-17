@@ -1,0 +1,3 @@
+我理解的agent就是LLM+RAG+工具+程序的组合
+AGENT和RAG并不是同一个东西，他们是组合的关系
+RAG的话又会有embedding模型以及向量索引和元数据，这些共同组成RAG

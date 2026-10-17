@@ -1,0 +1,33 @@
+{
+  "policy_id": "kb-only-v1",
+  "scope": "四个固定小样例；人工按预期判定答案，不能用 HTTP 200 代替回答质量",
+  "cases": [
+    {
+      "id": "supported-tool",
+      "kind": "knowledge_supported",
+      "question": "工具声明会自动执行函数吗？",
+      "session_group": "evaluation-recall",
+      "expectation": "回答不会；说明模型提出请求、应用实际执行，并引用真正支持的文件。",
+      "expected_source": "工具与检索.md"
+    },
+    {
+      "id": "unsupported-normalization",
+      "kind": "knowledge_missing",
+      "question": "归一化是什么？",
+      "expectation": "说明当前知识库没有足够资料；不能补充 Min-Max、Z-score、L2 定义或公式。"
+    },
+    {
+      "id": "unsupported-company-leave",
+      "kind": "knowledge_missing",
+      "question": "我们公司的员工每年有多少天带薪年假？",
+      "expectation": "说明当前知识库缺少公司年假制度，不能给出天数或猜测公司规则。"
+    },
+    {
+      "id": "dialogue-recall",
+      "kind": "conversation_recall",
+      "question": "我刚才问的是什么？",
+      "session_group": "evaluation-recall",
+      "expectation": "在与第一个样例相同的会话，回答之前问的是工具声明是否自动执行函数；不把它当缺少文档的知识问题。"
+    }
+  ]
+}
